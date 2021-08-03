@@ -662,11 +662,13 @@ int main(int argc, char *argv[])
         {
             QString _chemical = template_chemical_iterator.next();
             QList< QVariant> _jsonobj_cpy =  _i.value()->values(QString(_chemical).append("_macs"));
+
             if (_jsonobj_cpy.size() > 0) {
-
-                    out <<  _jsonobj_cpy.first().toString() << ";";
-
+                _jsonobj_cpy.first().toString() << ";";
+            } else {
+                out << "-;";
             }
+
 
         }
         out << "\n";

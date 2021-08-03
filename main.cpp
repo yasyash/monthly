@@ -664,7 +664,7 @@ int main(int argc, char *argv[])
             QList< QVariant> _jsonobj_cpy =  _i.value()->values(QString(_chemical).append("_macs"));
 
             if (_jsonobj_cpy.size() > 0) {
-                _jsonobj_cpy.first().toString() << ";";
+               out << _jsonobj_cpy.first().toString() << ";";
             } else {
                 out << "-;";
             }

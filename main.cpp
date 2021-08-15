@@ -43,6 +43,7 @@ int main(int argc, char *argv[])
 
     const QStringList template_weather = (QStringList() << "Темп. внешняя" << "Направление ветра" << "Скорость ветра" << "Влажность внеш."  );
 
+    const QString _dir = QString(argv[4]);
 
     QMap<QString, int> *chemical_classes = new  QMap<QString, int>;
 
@@ -515,7 +516,7 @@ int main(int argc, char *argv[])
 
     QTextStream(stdout) <<"Total are "<< _cnt<<" records" << endl;*/
 
-    QFile file("./api/monthly.csv");
+    QFile file(_dir.arg("/monthly.csv"));
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
         return -1;
 

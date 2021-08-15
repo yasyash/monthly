@@ -516,7 +516,7 @@ int main(int argc, char *argv[])
 
     QTextStream(stdout) <<"Total are "<< _cnt<<" records" << endl;*/
 
-    QFile file(_dir.arg("/monthly.csv"));
+    QFile file(QString(_dir).append("/monthly.csv"));
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
         return -1;
 

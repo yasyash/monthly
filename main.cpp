@@ -361,7 +361,7 @@ int main(int argc, char *argv[])
                     chemical_by_day_chain->value(day_current.toString("yyyy-MM-dd"))->insert(QString(_chemical).append("_macs"), 5);
 
                 if(local_counter_macs10)
-                    chemical_by_day_chain->value(day_current.toString(""))->insert(QString(_chemical).append("_macs"), 10);
+                    chemical_by_day_chain->value(day_current.toString("yyyy-MM-dd"))->insert(QString(_chemical).append("_macs"), 10);
 
 
 

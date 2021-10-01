@@ -88,13 +88,7 @@ int main(int argc, char *argv[])
 
         _chemical = template_chemical_iterator.next();
 
-        //_chemical_chain{{"срака овечья", 1}};
-
-
-        //chemical_chain[_chemical1.trimmed()] = -1.0;
         jsonobj->insert(_chemical, -1.0);
-        //jsonobj->insert(QString(_chemical).append("_range"), false);
-        //jsonobj->insert(QString(_chemical).append("_empty"), false);
 
         footer->insert(QString(_chemical).append("_exceed1"), 0);
         footer->insert(QString(_chemical).append("_exceed5"), 0);
@@ -111,9 +105,6 @@ int main(int argc, char *argv[])
         footer->insert(QString(_chemical).append("_greatest_repeatably"), -1.0);
         footer->insert(QString(_chemical).append("_sigma"), -1.0);
 
-
-        //  chemical_chain.append(QJsonValue( {QString(_chemical).append("_range") , false}));
-        // chemical_chain.append(QJsonValue( {QString(_chemical).append("_empty") , false}));
 
     }
 
@@ -489,32 +480,7 @@ int main(int argc, char *argv[])
 
         }
     }
-    //chemical_daily_chain[_chemical + "_standard_index"] = 0.0;
-    //chemical_daily_chain[_chemical + "_greatest_repeatably"] = 0.0;
-    //chemical_daily_chain[_chemical + "_sigma"] = 0.0;
-    /*QSqlQuery *query= new QSqlQuery ("select * from sensors_data where idd='" + QString(argv[1]) +"' and date_time >= '"+ QString(argv[2]) +"' and date_time < '"+
-            QString(argv[3])+"' order by date_time asc", *m_conn);
-    query->first();
 
-    float _measure;
-
-    int _cnt =0;
-    for (int i = 0; i < query->size(); i++ )
-    {
-        //qDebug() << query->value("typemeasure").toString() << "  -----  "<< query->value("serialnum").toUuid() <<"\n\r";
-
-        // m_uuid->insert( query->value("typemeasure").toString(), query->value("serialnum").toUuid());
-        rec = query->record();
-        _measure = (rec.field("measure").value().toFloat());
-
-        QTextStream(stdout)<< i << "   " <<rec.field("date_time").value().toString() <<"- - - " << rec.field("typemeasure").value().toString() << " - - - "<< _measure<< endl;
-        _cnt++;
-        query->next();
-
-    }
-    query->finish();
-
-    QTextStream(stdout) <<"Total are "<< _cnt<<" records" << endl;*/
 
     QFile file(QString(_dir).append("/monthly.csv"));
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
